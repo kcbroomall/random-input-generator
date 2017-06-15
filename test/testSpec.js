@@ -219,6 +219,10 @@ describe('Strings (generateString)', () => {
       };
       expect(withinRange).to.equal(true);
     });
+    it('should return a string of length minLength when given only one parameter', () => {
+      randomStr = generateString(6);
+      expect(randomStr.length).to.equal(6);
+    })
     it('should return a string of maxLength length when minLength === maxLength', () => {
       randomStr = generateString(6,6);
       expect(randomStr.length).to.equal(6);

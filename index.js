@@ -27,12 +27,19 @@ const generateNumber = (min = 0, max = 10000, rounded = true) => {
   }
 };
   //create random string, default (0-8 characters, can be symbols, casing "upper" or "lower")
-const generateString = (minLength = 4, maxLength = 12, nonLetters = true, casing) => {
+const generateString = (minLength, maxLength, nonLetters = true, casing) => {
+  if(minLength === undefined && maxLength === undefined) {
+    minLength = 4;
+    maxLength = 12;
+  }
+  if(minLength > 0 && maxLength === undefined) {
+    maxLength = minLength;
+  }
   if (typeof minLength !== "number" || typeof maxLength !== "number" || typeof nonLetters !== "boolean" || (typeof casing !== "undefined" && typeof casing !== "string")) {
     throw Error('Invalid argument type. minLength: number, maxLength: number, nonLetters: boolean, casing: string or undefined');
   }
   if (minLength > maxLength || minLength < 0) {
-    throw Error('Invalid length arguments: minLength must be less than maxLength.')
+    throw Error('Invalid length arguments: minLength must be less than maxLength.');
   }
   let specificLength;
   if (minLength === maxLength) {
