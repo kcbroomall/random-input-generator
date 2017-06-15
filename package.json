@@ -36,15 +36,5 @@
     "sourceMap": false,
     "instrument": false
   },
-  "keywords": [
-    "random",
-    "seed",
-    "data",
-    "generator",
-    "string",
-    "object",
-    "boolean",
-    "number",
-    "array"
-  ]
+  "keywords": ["random", "seed", "data", "generator", "string", "object", "boolean", "number", "array"]
 }
